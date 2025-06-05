@@ -1,0 +1,244 @@
+/* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap'); /* Using Montserrat for a modern look */
+
+:root {
+    --primary-orange: #ff9900; /* Start of gradient */
+    --secondary-orange: #ffcc00; /* End of gradient */
+    --text-dark: #333;
+    --text-light: #f4f4f4;
+    --nav-active: #fff;
+    --nav-inactive: rgba(255, 255, 255, 0.7);
+    --player-bg: rgba(100, 100, 255, 0.2); /* Light blue-purple tone for players */
+    --player-border: rgba(100, 100, 255, 0.3);
+    --footer-text-color: #666;
+    --footer-bg-gradient-start: #f0f0f0; /* Lighter background for footer section */
+    --footer-bg-gradient-end: #ffffff;
+    --icon-bg-dark: #222; /* For social media icons */
+    --track-bg: #e0e0e0;
+    --track-border: #c0c0c0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background: linear-gradient(to bottom, var(--primary-orange), var(--secondary-orange), #ffffff 50%); /* Gradient from top to middle, then white */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-right: 20px;
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.artist-name h1 {
+    font-size: 2.5em;
+    color: var(--text-light);
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: -10px; /* Adjust spacing */
+}
+
+.artist-name p {
+    font-size: 1.8em;
+    color: var(--text-light);
+    font-weight: 400;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    color: rgb(73, 73, 219);
+}
+
+nav ul li {
+    margin-left: 30px;
+    color: rgb(73, 73, 219);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(73, 73, 219);
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: var(--nav-active);
+    color: #222;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    
+}
+
+/* Main Content Area */
+main {
+    flex: 1; /* Allows main content to expand and push footer down */
+    padding: 20px 40px;
+}
+
+/* Audio Player Styles */
+/* Audio Player Styles */
+.audio-player-bar {
+    background: var(--player-bg);
+    border: 1px solid var(--player-border);
+    border-radius: 10px;
+    padding: 15px 25px; /* Increased padding */
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Increased gap */
+    margin-bottom: 30px; /* More space below the top player */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.audio-player-bar .controls {
+    display: flex; /* Ensure controls are flex for internal spacing */
+    gap: 10px; /* Space between play and pause */
+}
+
+.audio-player-bar .controls img {
+    width: 32px; /* Made bigger */
+    height: 32px; /* Made bigger */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.audio-player-bar .controls img:hover {
+    transform: scale(1.1);
+}
+
+.audio-player-bar .track-info {
+    flex-grow: 1;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 1.1em; /* Slightly larger text */
+}
+
+.audio-player-bar .headphone-icon img {
+    width: 40px; /* Made bigger */
+    height: 40px; /* Made bigger */
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to top, var(--footer-bg-gradient-start), var(--footer-bg-gradient-end));
+    padding: 40px;
+    text-align: center;
+    margin-top: auto; /* Pushes footer to the bottom */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    text-align: left;
+    margin-right: 50px;
+}
+
+.footer-brand h2 {
+    font-size: 2.5em;
+    color: var(--primary-orange);
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.footer-brand span {
+    font-size: 1em;
+    color: var(--footer-text-color);
+    font-weight: 400;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.footer-social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--icon-bg-dark); /* Dark circle for icons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    transform: translateY(-3px);
+}
+
+.footer-social-icons img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1); /* Makes the icons white on dark background */
+}
+
+.footer-contact-info {
+    text-align: left;
+    margin-top: 10px; /* Adjust to align with brand */
+}
+
+.footer-contact-info p {
+    font-size: 1em;
+    color: var(--footer-text-color);
+    margin-bottom: 5px;
+}

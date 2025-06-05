@@ -1,0 +1,74 @@
+/* audio-page-specific.css */
+
+.audio-track-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased gap between track items */
+    padding-top: 20px;
+    max-width: 900px; /* Limit width to center them better */
+    margin: 0 auto; /* Center the track list */
+}
+
+.audio-track-item {
+    background: var(--track-bg);
+    border: 1px solid var(--track-border);
+    border-radius: 10px; /* Slightly more rounded */
+    padding: 15px 25px; /* Increased padding */
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Increased gap between elements */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.audio-track-item:hover {
+    transform: translateY(-3px); /* Subtle lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.audio-track-item .track-controls {
+    display: flex;
+    gap: 10px; /* Space between play and pause icons */
+    flex-shrink: 0; /* Prevent controls from shrinking */
+    min-width: 70px; /* Ensure consistent width for controls */
+    justify-content: flex-start; /* Align controls to the start */
+}
+
+.audio-track-item .track-controls img {
+    width: 30px; /* Made bigger */
+    height: 30px; /* Made bigger */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.audio-track-item .track-controls img:hover {
+    transform: scale(1.1);
+}
+
+.audio-track-item .track-name {
+    flex-grow: 1; /* Allows track name to take available space */
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: 1.1em; /* Slightly larger text */
+    text-align: left; /* Ensure text aligns left */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+.audio-track-item .track-icons {
+    display: flex;
+    gap: 15px; /* Increased gap between icons */
+    flex-shrink: 0; /* Prevent icons from shrinking */
+}
+
+.audio-track-item .track-icons img {
+    width: 28px; /* Made bigger */
+    height: 28px; /* Made bigger */
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.audio-track-item .track-icons img:hover {
+    transform: scale(1.1);
+}
